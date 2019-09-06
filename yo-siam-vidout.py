@@ -280,6 +280,10 @@ def main():
                             #print(frame_count)
                             out.write(frame)
 
+                            with open('./videos/cords/vid-'+str(video_name)+'-tracking-'+str(object_counter)+'-object-'+str(cord)+'.csv', 'a', newline='') as csvfile:
+                                writer = csv.writer(csvfile, quoting=0)#,quotechar='',escapechar='')
+                                writer.writerow(mylist)
+
             else:
                 print("Coordinate Ignored")
                 continue
